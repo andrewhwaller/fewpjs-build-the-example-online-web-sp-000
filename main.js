@@ -12,13 +12,21 @@ let colorStates = {
   "": "red"
 };
 
-document.getElementByClass('like').addEventListener('click', likeEvent())
+let likeButtons = document.querySelectorAll(".like")
+
+for (let glyph of likeButtons) {
+  glyph.addEventListener("click", likeEvent);
+}
 
 function likeEvent(event) {
-  let heart = event.target;
+  let button= event.target;
   mimicServerCall(url)
     .then(function(statusMessage){
-
+      button.innerText = glyphStates[button.innerText];
+      button.style.color = colorStates[button.style.color]
+    })
+    .catch(function(error) {
+      document.getElementById("modal").className = "";
     })
 }
 
