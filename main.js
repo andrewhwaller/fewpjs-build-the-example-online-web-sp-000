@@ -2,8 +2,11 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
-document.getElementByClass('like-glyph')
+document.getElementByClass('like').addEventListener('click', likeEvent())
 
+function likeEvent() {
+  mimicServerCall()
+}
 
 
 
