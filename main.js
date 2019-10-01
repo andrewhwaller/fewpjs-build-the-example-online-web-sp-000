@@ -2,10 +2,24 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
+let glyphStates = {
+  "♡": "♥",
+  "♥": "♡"
+};
+
+let colorStates = {
+  "red" : "",
+  "": "red"
+};
+
 document.getElementByClass('like').addEventListener('click', likeEvent())
 
-function likeEvent() {
-  mimicServerCall()
+function likeEvent(event) {
+  let heart = event.target;
+  mimicServerCall(url)
+    .then(function(statusMessage){
+      
+    })
 }
 
 
